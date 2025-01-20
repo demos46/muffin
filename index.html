@@ -95,7 +95,7 @@
                     <h2>-------------------------------->   Abstract   <---------------------------------</h2>
           <br />
        <font size="4">
-Achieving high-fidelity audio compression is a core challenge in neural audio coding, especially for preserving perceptual quality across diverse audio types. In this paper, we introduce MUFFIN, a novel neural audio codec (NAC) that leverages multi-band spectral decomposition for efficient audio compression and reconstruction. MUFFIN employs multi-band spectral residual vector quantization (MBS-RVQ) to partition and quantize distinct frequency bands, aligning with psychoacoustic principles to enhance perceptual fidelity while optimizing bitrate allocation. We further introduce a high-compression MUFFIN variant achieving a 12.5 kHz compression rate while preserving high audio fidelity. Experimental results on diverse datasets, including LibriTTS, EARS, Music4All, ESC-50, GTZAN, and BBC Sound Effects (totaling over 1,600 hours), demonstrate MUFFIN’s state-of-the-art performance in audio reconstruction across varied domains, effectively improving the trade-off between compression rate and reconstruction quality in NAC systems. The demo of audio samples is available online
+Achieving high-fidelity audio compression while preserving perceptual quality across diverse audio types remains a significant challenge in Neural Audio Coding (NAC). This paper introduces MUFFIN, a fully convolutional NAC framework that leverages psychoacoustically guided multi-band frequency reconstruction. Central to MUFFIN is the Multi-Band Spectral Residual Vector Quantization (MBS-RVQ) mechanism, which quantizes latent speech across different frequency bands. This approach optimizes bitrate allocation and enhances fidelity based on psychoacoustic studies, achieving efficient compression with unique perceptual features that separate content from speaker attributes through distinct codebooks. MUFFIN integrates a transformer-inspired convolutional architecture with proposed modified snake activation functions to capture fine frequency details with greater precision. Extensive evaluations on diverse datasets (LibriTTS, IEMOCAP, GTZAN, BBC) demonstrate MUFFIN’s ability to consistently surpass existing performance in audio reconstruction across various domains. Notably, a high-compression variant achieves an impressive SOTA 12.5 kHz rate while preserving reconstruction quality. Furthermore, MUFFIN excels in downstream generative tasks, demonstrating its potential as a robust token representation for integration with large language models. These results establish MUFFIN as a groundbreaking advancement in NAC and as the first neural psychoacoustic coding system.
                   <div class="big-screen">
                     
 
@@ -761,7 +761,7 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
 
 <table class="table">
                       <thead>
-                            <th colspan=7 style="color:blue;"><h4>(C) Emotional Speech Reconstruction</h4></th>
+                            <th colspan=8 style="color:blue;"><h4>(C) Emotional Speech Reconstruction</h4></th>
  
                       <tbody>
                                 
@@ -774,6 +774,7 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
                                     <th  style="text-align:center;font-size:80%">   Muffin (75 Hz) </th>
                                     <th  style="text-align:center;font-size:80%">   Muffin (25 Hz) </th>
                                     <th  style="text-align:center;font-size:80%">   Muffin (12.5 Hz) </th>
+                                  <th  style="text-align:center;font-size:80%">   Mini </th>
                                     <th  style="text-align:center;font-size:80%">   Target </th>
 
                  
@@ -824,6 +825,11 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
                                                                     <td>
                                     <audio controls>
                                       <source src="./codec/iemocap/Ses04M_impro03_M013/muffin125.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio> </td>
+                                     <td>
+                                    <audio controls>
+                                      <source src="./codec/iemocap/Ses04M_impro03_M013/mini.wav" type="audio/wav" />
                                       Your browser does not support the audio element.
                                     </audio> </td>
                                     <td>
@@ -882,6 +888,11 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
                                       <source src="./codec/iemocap/Ses04M_script01_1_M024/muffin125.wav" type="audio/wav" />
                                       Your browser does not support the audio element.
                                     </audio> </td>
+                                   <td>
+                                    <audio controls>
+                                      <source src="./codec/iemocap/Ses04M_script01_1_M024/mini.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio> </td>
                                     <td>
 
                                                                         <audio controls>
@@ -936,6 +947,11 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
                                                                     <td>
                                     <audio controls>
                                       <source src="./codec/iemocap/Ses04M_script02_2_F011/muffin125.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio> </td>
+                                      <td>
+                                    <audio controls>
+                                      <source src="./codec/iemocap/Ses04M_script02_2_F011/mini.wav" type="audio/wav" />
                                       Your browser does not support the audio element.
                                     </audio> </td>
                                     <td>
@@ -994,6 +1010,12 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
                                       <source src="./codec/iemocap/Ses04M_script03_2_F050/muffin125.wav" type="audio/wav" />
                                       Your browser does not support the audio element.
                                     </audio> </td>
+                                                                                                      <td>
+                                    <audio controls>
+                                      <source src="./codec/iemocap/Ses04M_script03_2_F050/mini.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio> </td>
+                                  
                                     <td>
 
                                                                         <audio controls>
@@ -1050,6 +1072,11 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
                                       <source src="./codec/iemocap/Ses05M_impro04_M012/muffin125.wav" type="audio/wav" />
                                       Your browser does not support the audio element.
                                     </audio> </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="./codec/iemocap/Ses05M_impro04_M012/mini.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio> </td>
                                     <td>
 
                                                                         <audio controls>
@@ -1077,7 +1104,7 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
 
                    <table class="table">
                       <thead>
-                            <th colspan=7 style="color:blue;"><h4>(D) LibriTTS Test-Clean Reconstruction</h4></th>
+                            <th colspan=8 style="color:blue;"><h4>(D) LibriTTS Test-Clean Reconstruction</h4></th>
  
                       <tbody>
                                 
@@ -1090,6 +1117,7 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
                                     <th  style="text-align:center;font-size:80%">   Muffin (75 Hz) </th>
                                     <th  style="text-align:center;font-size:80%">   Muffin (25 Hz) </th>
                                     <th  style="text-align:center;font-size:80%">   Muffin (12.5 Hz) </th>
+                                  <th  style="text-align:center;font-size:80%">   Mini </th>
                                     <th  style="text-align:center;font-size:80%">   Target </th>
 
                  
@@ -1140,6 +1168,11 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
                                                                     <td>
                                     <audio controls>
                                       <source src="./codec/testclean/237_134500_000017_000001/muffin125.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio> </td>
+                                       <td>
+                                    <audio controls>
+                                      <source src="./codec/testclean/237_134500_000017_000001/mini.wav" type="audio/wav" />
                                       Your browser does not support the audio element.
                                     </audio> </td>
                                     <td>
@@ -1198,6 +1231,12 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
                                       <source src="./codec/testclean/1580_141083_000114_000001/muffin125.wav" type="audio/wav" />
                                       Your browser does not support the audio element.
                                     </audio> </td>
+                                  
+                                                                    <td>
+                                    <audio controls>
+                                      <source src="./codec/testclean/1580_141083_000114_000001/mini.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio> </td>
                                     <td>
 
                                                                         <audio controls>
@@ -1252,6 +1291,12 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
                                                                     <td>
                                     <audio controls>
                                       <source src="./codec/testclean/3570_5695_000008_000004/muffin125.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio> </td>
+                                  
+                                                                    <td>
+                                    <audio controls>
+                                      <source src="./codec/testclean/3570_5695_000008_000004/mini.wav" type="audio/wav" />
                                       Your browser does not support the audio element.
                                     </audio> </td>
                                     <td>
@@ -1310,6 +1355,12 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
                                       <source src="./codec/testclean/6829_68771_000010_000009/muffin125.wav" type="audio/wav" />
                                       Your browser does not support the audio element.
                                     </audio> </td>
+                                  
+                                                                    <td>
+                                    <audio controls>
+                                      <source src="./codec/testclean/6829_68771_000010_000009/mini.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio> </td>
                                     <td>
 
                                                                         <audio controls>
@@ -1365,6 +1416,11 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
                                       <source src="./codec/testclean/6930_81414_000048_000002/muffin125.wav" type="audio/wav" />
                                       Your browser does not support the audio element.
                                     </audio> </td>
+                                                <td>
+                                    <audio controls>
+                                      <source src="./codec/testclean/6930_81414_000048_000002/mini.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio> </td>
                                     <td>
 
                                                                         <audio controls>
@@ -1395,7 +1451,7 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
 
                    <table class="table">
                       <thead>
-                            <th colspan=7 style="color:blue;"><h4>(E) LibriTTS Test-Other Reconstruction</h4></th>
+                            <th colspan=8 style="color:blue;"><h4>(E) LibriTTS Test-Other Reconstruction</h4></th>
  
                       <tbody>
                                 
@@ -1408,6 +1464,7 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
                                     <th  style="text-align:center;font-size:80%">   Muffin (75 Hz) </th>
                                     <th  style="text-align:center;font-size:80%">   Muffin (25 Hz) </th>
                                     <th  style="text-align:center;font-size:80%">   Muffin (12.5 Hz) </th>
+                                  <th  style="text-align:center;font-size:80%">   Mini </th>
                                     <th  style="text-align:center;font-size:80%">   Target </th>
 
                  
@@ -1458,6 +1515,12 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
                                                                     <td>
                                     <audio controls>
                                       <source src="./codec/testother/3528_168656_000006_000011/muffin125.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio> </td>
+                                  
+                                                                    <td>
+                                    <audio controls>
+                                      <source src="./codec/testother/3528_168656_000006_000011/mini.wav" type="audio/wav" />
                                       Your browser does not support the audio element.
                                     </audio> </td>
                                     <td>
@@ -1516,6 +1579,12 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
                                       <source src="./codec/testother/3538_142836_000013_000002/muffin125.wav" type="audio/wav" />
                                       Your browser does not support the audio element.
                                     </audio> </td>
+                                  
+                                                                    <td>
+                                    <audio controls>
+                                      <source src="./codec/testother/3538_142836_000013_000002/mini.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio> </td>
                                     <td>
 
                                                                         <audio controls>
@@ -1569,6 +1638,11 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
                                                                     <td>
                                     <audio controls>
                                       <source src="./codec/testother/4198_12259_000001_000048/muffin125.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio> </td>
+                                   <td>
+                                    <audio controls>
+                                      <source src="./codec/testother/4198_12259_000001_000048/mini.wav" type="audio/wav" />
                                       Your browser does not support the audio element.
                                     </audio> </td>
                                     <td>
@@ -1627,6 +1701,11 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
                                       <source src="./codec/testother/4198_61336_000030_000000/muffin125.wav" type="audio/wav" />
                                       Your browser does not support the audio element.
                                     </audio> </td>
+                                                <td>
+                                    <audio controls>
+                                      <source src="./codec/testother/4198_61336_000030_000000/mini.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio> </td>
                                     <td>
 
                                                                         <audio controls>
@@ -1681,6 +1760,11 @@ Achieving high-fidelity audio compression is a core challenge in neural audio co
                                                                     <td>
                                     <audio controls>
                                       <source src="./codec/testother/7902_96592_000040_000000/muffin125.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio> </td>
+                                                  <td>
+                                    <audio controls>
+                                      <source src="./codec/testother/7902_96592_000040_000000/mini.wav" type="audio/wav" />
                                       Your browser does not support the audio element.
                                     </audio> </td>
                                     <td>
