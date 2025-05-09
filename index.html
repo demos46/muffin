@@ -75,8 +75,10 @@
         <div class="row align-items-center">
           <div class="col-md-12">
             <h1><a class="text-light">MUFFIN: Multi-band Frequency Reconstruction for Neural Psychoacoustic Coding</h1><br>
-             <font size=5><span style="color:#FFFFFF">    </br>
-             <font size=3><span style="color:#000000"> 
+             <font size=5><span style="color:#FFFFFF">   Dianwen Ng<sup>1,2</sup>, Kun Zhou<sup>3</sup>, Yi-Wen Chao<sup>2</sup>, Zhiwei Xiong<sup>2</sup>, Bin Ma<sup>3</sup>, Eng Siong Chng<sup>2</sup>  </br>
+             <font size=3><span style="color:#000000"> <sup>1</sup>MiroMind, Singapore <sup>2</sup>Nanyang Technological University, Singapore <sup>3</sup> Tongyi Speech Team, Alibaba Group, Singapore</br>
+              <font size=5><span style="color:#FFFFFF">  </br>
+              <font size=6><span style="color:#FFFFFF"> ICML 2025 </br>
              </font><font size=4>   </a>  
             <p>
               <div class="row">
@@ -91,9 +93,15 @@
   <main>
     <div class="container">
       <div class="row" id="result">
-        <div class="col-md-12">
-                    <h2>--------------------------------   Abstract   ---------------------------------</h2>
-          <br />
+<div class="col-md-12" style="text-align: center;">
+    <h2 style="font-weight: bold; font-size: 36px;">Abstract </h2>
+    <br />
+    <p>
+        <a href="https://github.com/dianwen-ng/MUFFIN" style="font-size: 20px; font-weight: bold;">[Code]</a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="your-arxiv-link-here" style="font-size: 20px; font-weight: bold;">[Arxiv]</a>
+    </p>
+</div>
        <font size="4">
 Achieving high-fidelity audio compression while preserving perceptual quality across diverse audio types remains a significant challenge in Neural Audio Coding (NAC). This paper introduces MUFFIN, a fully convolutional NAC framework that leverages psychoacoustically guided multi-band frequency reconstruction. Central to MUFFIN is the Multi-Band Spectral Residual Vector Quantization (MBS-RVQ) mechanism, which quantizes latent speech across different frequency bands. This approach optimizes bitrate allocation and enhances fidelity based on psychoacoustic studies, achieving efficient compression with unique perceptual features that separate content from speaker attributes through distinct codebooks. MUFFIN integrates a transformer-inspired convolutional architecture with proposed modified snake activation functions to capture fine frequency details with greater precision. Extensive evaluations on diverse datasets (LibriTTS, IEMOCAP, GTZAN, BBC) demonstrate MUFFIN’s ability to consistently surpass existing performance in audio reconstruction across various domains. Notably, a high-compression variant achieves an impressive SOTA 12.5 kHz rate while preserving reconstruction quality. Furthermore, MUFFIN excels in downstream generative tasks, demonstrating its potential as a robust token representation for integration with large language models. These results establish MUFFIN as a groundbreaking advancement in NAC and as the first neural psychoacoustic coding system.
                   <div class="big-screen">
@@ -104,18 +112,25 @@ Achieving high-fidelity audio compression while preserving perceptual quality ac
  <br /> <br />
 
 
-          <h2>----------------------------   System Overview   ----------------------------</h2>
+<div class="col-md-12">
+    <h2 style="font-weight: bold; font-size: 36px; text-align: center;"> System Overview</h2>
+    <br />
+</div>
       
 <br />
-</style>
-  <img src="model3.png"  width="1100" height="480" / > <p>
+<div style="text-align: center;">
+  <img src="muffin.png" width="800" height="850" />
+</div>
                       <figcaption style="terx-align:center;"></font><font size=4> 
                        Fig. 1 Architecture of MUFFIN incorporating a fully convolutional structure. The autoencoder blocks implement transformer-like operations through a (1) multi-receptive field communication layer for spatial dependency modeling, and (2) an inverted bottleneck layer for increased neural complexity. </font>
                       </figcaption><br>
 </article>
 </br>
 
-<h2>---------------------------->   Speech Samples <-----------------------------</h2>
+<div class="col-md-12">
+    <h2 style="font-weight: bold; font-size: 36px; text-align: center;"> Speech Samples</h2>
+    <br />
+</div>
 
 </br>
 
@@ -1807,8 +1822,8 @@ Achieving high-fidelity audio compression while preserving perceptual quality ac
 
  </th></tr>
   </th></tr>
-                        <tr><th style="font-size:80%" colspan=6 font-weight="normal">We discover that deep learning models inherently learn latent features that align strongly with psychoacoustic studies,
-                          where segment speech attributes across distinct frequency bands <mark><strong><i>achieving weak disentanglement</i></strong></mark> without lables (no supervision required). Specifically, we identify the following roles of the learned codebooks:<br>
+                        <tr><th style="font-size:80%" colspan=6 font-weight="normal">We discover that through MBS-RVQ, MUFFIN learns to quantize latent speech features,
+                          where segment speech attributes across distinct frequency bands <mark><strong><i>achieving weak disentanglement</i></strong></mark> without labels (no supervision required). Specifically, we identify the following roles of the learned codebooks:<br>
                           <ul>
                             <li><strong>Codebook 1</strong>: Encodes features critical for high-level speech intelligibility, focusing on content-related attributes; </li>
                             <li><strong>Codebook 2</strong>: Captures articulation-related properties, including formats, which are essential for the clarity and precision of consonant sounds; </li>
